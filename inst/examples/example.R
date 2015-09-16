@@ -7,6 +7,9 @@ parset(Titanic)
 # curved lines
 parset(Titanic, tension = 0.2)
 
+# with HairEyeColor
+parset(HairEyeColor)
+
 # examples from ggparallel
 #  http://artax.karlin.mff.cuni.cz/r-help/library/ggparallel/html/ggparallel.html
 #  ggparallel(list("gear", "cyl"), data=mtcars)
