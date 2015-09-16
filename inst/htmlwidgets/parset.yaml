@@ -6,5 +6,5 @@ dependencies:
   - name: d3-parsets
     version: 1.2.4
     src: htmlwidgets/lib/d3-parsets
-    script: d3.parsets.js
+    script: d3.parsets.min.js
     stylesheet: d3.parsets.css
