@@ -1,0 +1,50 @@
+---
+title: "Introduction to parsetR"
+author: "Kenton Russell"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to parsetR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Parallel Sets
+
+Parallel sets first [published](http://kosara.net/papers/2006/Kosara_TVCG_2006.pdf) by Robert Kosara in 
+
+<blockquote>
+Kosara, Robert, Fabian Bendix, and Helwig Hauser. "Parallel sets: Interactive exploration and visual analysis of categorical data." Visualization and Computer Graphics, IEEE Transactions on 12.4 (2006): 558-568.
+</blockquote>
+
+provide a compelling interactive method for visualizing categorical data.  [Jason Davies](https://www.jasondavies.com/), co-author of [`d3.js`](https://github.com/mbostock/d3/graphs/contributors), implemented an extremely well-designed [`d3` version of parallel sets](https://www.jasondavies.com/parallel-sets/).  Using the infrastructure provided by [`htmlwidgets`](http://htmlwidgets.org), this package `parsetR` allows us to easily integrate parallel sets into our R workflow.
+
+## Installation
+
+`parsetR` is not on CRAN, so please install using `devtools::install_github()`.
+
+```{r eval = FALSE}
+devtools::install_github("timelyportfolio/parsetR")
+```
+
+## Usage
+
+In this first iteration, `parsetR` is designed to work with `tables` from R, such as the built-in `Titanic` dataset.
+
+```{r}
+library(parsetR)
+
+parset(Titanic, width = "80%", height = 400)
+```
+
+Here is another example with the `UCBAdmissions` data, and we'll make the lines curvy with the `tension` argument.
+
+```{r}
+library(parsetR)
+
+parset(UCBAdmissions, tension = 0.5, width = "80%", height = 400)
+```
+
+## Feedback
+
+`parsetR` was implemented in a couple of hours to provide a base for feedback, criticism, comments.  Please help me make this thing as good as it should be.
