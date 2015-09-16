@@ -12,21 +12,31 @@ HTMLWidgets.widget({
 
   renderValue: function(el, x, instance) {
 
-    var parset = d3.parsets();
-    // convert data to array of objects/rows
-    var data = HTMLWidgets.dataframeToD3(x.data);
+    // size based on container
+    var width = el.getBoundingClientRect().width;
+    var height = el.getBoundingClientRect().height;
     
     // empty container in case of dynamic/Shiny situation
     el.innerHTML = "";
+    var parset = d3.parsets()
+                  .width(width)
+                  .height(height);
     
-    var vis = d3.select(el).append("svg");
+    // convert data to array of objects/rows
+    var data = HTMLWidgets.dataframeToD3(x.data);
+    
+    var vis = d3.select(el).append("svg")
+                  .attr("width", width)
+                  .attr("height", height);
     
     vis.datum(data).call(parset);
     
+    instance.parset = parset;
+
   },
 
   resize: function(el, width, height, instance) {
-
+    
   }
 
 });
