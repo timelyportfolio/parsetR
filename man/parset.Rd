@@ -7,9 +7,15 @@
 parset(data = NULL, width = NULL, height = NULL)
 }
 \arguments{
-\item{data}{}
+\item{data}{\code{table} such as \code{Titanic}}
 }
 \description{
 Create a Parallel Sets Visualization
+}
+\examples{
+# devtools::install_github("timelyportfolio/parsetR")
+library(parsetR)
+
+parset(Titanic)
 }
 

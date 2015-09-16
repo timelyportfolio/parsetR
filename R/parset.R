@@ -1,6 +1,8 @@
 #' Create a Parallel Sets Visualization
 #'
-#' @param data 
+#' @param data \code{table} such as \code{Titanic}
+#' 
+#' @example ./inst/examples/example.R
 #'
 #' @import htmlwidgets
 #' @importFrom vcdExtra expand.dft
