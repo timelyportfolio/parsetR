@@ -1,7 +1,24 @@
 Package: parsetR
-Title: Parallel Sets (d3.js) in R
+Title: Parallel Sets Interactive Visualization
 Version: 0.0.1
-Author: Kenton Russell
+Authors@R: c(
+      person(
+        "Mike", "Bostock"
+        , role = c("aut", "cph")
+        , comment = "d3.js library in htmlwidgets/lib, http://d3js.org"
+      ),
+      person(
+        "Jason", "Davies"
+        , role = c("aut", "cph")
+        , comment = "d3-parsets library in htmlwidgets/lib, https://www.jasondavies.com/parallel-sets/"
+      ),
+      person(
+        "Kent", "Russell"
+        , role = c("aut", "cre")
+        , comment = "R interface"
+        , email = "kent.russell@timelyportfolio.com"
+      )
+    )
 Maintainer: Kenton Russell <kent.russell@timelyportfolio.com>
 Description: Visualize your data with interactive d3.js parallel sets with the power and convenience of an htmlwidget.
 License: MIT + file LICENSE
