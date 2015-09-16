@@ -11,3 +11,6 @@ parset(Titanic, tension = 0.2)
 #  http://artax.karlin.mff.cuni.cz/r-help/library/ggparallel/html/ggparallel.html
 #  ggparallel(list("gear", "cyl"), data=mtcars)
 parset(mtcars[,c("gear","cyl")])
+
+data(genes,package="ggparallel")
+parset(genes[,c("path","chrom")])
