@@ -40,12 +40,12 @@ parset <- function(message, width = NULL, height = NULL) {
 #'
 #' @export
 parsetOutput <- function(outputId, width = '100%', height = '400px'){
-  shinyWidgetOutput(outputId, 'parset', width, height, package = 'parsetR')
+  htmlwidgets::shinyWidgetOutput(outputId, 'parset', width, height, package = 'parsetR')
 }
 
 #' @rdname parset-shiny
 #' @export
 renderParset <- function(expr, env = parent.frame(), quoted = FALSE) {
   if (!quoted) { expr <- substitute(expr) } # force quoted
-  shinyRenderWidget(expr, parsetOutput, env, quoted = TRUE)
+  htmlwidgets::shinyRenderWidget(expr, parsetOutput, env, quoted = TRUE)
 }
