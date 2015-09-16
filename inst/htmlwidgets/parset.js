@@ -21,6 +21,15 @@ HTMLWidgets.widget({
     var parset = d3.parsets()
                   .width(width)
                   .height(height);
+                  
+    // set options for parset with x.options from R arguments
+    Object.keys(x.options).forEach(
+      function(ky){
+        if(parset[ky]){
+          parset[ky](x.options[ky]);
+        }
+      }
+    )
     
     // convert data to array of objects/rows
     var data = HTMLWidgets.dataframeToD3(x.data);
