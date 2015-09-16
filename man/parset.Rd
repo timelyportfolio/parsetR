@@ -43,5 +43,9 @@ parset(Titanic)
 
 # curved lines
 parset(Titanic, tension = 0.2)
+
+# examples from ggparallel
+#  ggparallel(list("gear", "cyl"), data=mtcars)
+parset(mtcars[,c("gear","cyl")])
 }
 
