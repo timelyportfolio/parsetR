@@ -1,7 +1,10 @@
-# (uncomment to add a dependency)
-# dependencies:
-#  - name:
-#    version:
-#    src:
-#    script:
-#    stylesheet:
+dependencies:
+  - name: d3
+    version: 3.5.6
+    src: htmlwidgets/lib/d3
+    script: d3.min.js
+  - name: d3-parsets
+    version: 1.2.4
+    src: htmlwidgets/lib/d3-parsets
+    script: d3.parsets.js
+    stylesheet: d3.parsets.css
