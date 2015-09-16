@@ -1,0 +1,12 @@
+Package: parsetR
+Title: Parallel Sets (d3.js) in R
+Version: 0.0.1
+Author: Kenton Russell
+Maintainer: Kenton Russell <kent.russell@timelyportfolio.com>
+Description: Visualize your data with interactive d3.js parallel sets with the power and convenience of an htmlwidget.
+License: MIT + file LICENSE
+LazyData: true
+URL: https://github/com/timelyportfolio/parsetR
+BugReports: https://github/com/timelyportfolio/parsetR/issues
+Suggests: 
+    testthat
