@@ -2,11 +2,14 @@
 % Please edit documentation in R/parset.R
 \name{parset}
 \alias{parset}
-\title{<Add Title>}
+\title{Create a Parallel Sets Visualization}
 \usage{
-parset(message, width = NULL, height = NULL)
+parset(data = NULL, width = NULL, height = NULL)
+}
+\arguments{
+\item{data}{}
 }
 \description{
-<Add Description>
+Create a Parallel Sets Visualization
 }
 

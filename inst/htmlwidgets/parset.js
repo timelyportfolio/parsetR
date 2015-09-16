@@ -6,16 +6,23 @@ HTMLWidgets.widget({
 
   initialize: function(el, width, height) {
 
-    return {
-      // TODO: add instance fields as required
-    }
+    return {}
 
   },
 
   renderValue: function(el, x, instance) {
 
-    el.innerText = x.message;
-
+    var parset = d3.parsets();
+    // convert data to array of objects/rows
+    var data = HTMLWidgets.dataframeToD3(x.data);
+    
+    // empty container in case of dynamic/Shiny situation
+    el.innerHTML = "";
+    
+    var vis = d3.select(el).append("svg");
+    
+    vis.datum(data).call(parset);
+    
   },
 
   resize: function(el, width, height, instance) {

@@ -1,15 +1,21 @@
-#' <Add Title>
+#' Create a Parallel Sets Visualization
 #'
-#' <Add Description>
+#' @param data 
 #'
 #' @import htmlwidgets
+#' @importFrom vcdExtra expand.dft
 #'
 #' @export
-parset <- function(message, width = NULL, height = NULL) {
-
+parset <- function(data = NULL, width = NULL, height = NULL) {
+  
+  # if table then expand grid
+  if(inherits(data, "table")){
+    data = expand.dft(data)
+  }
+  
   # forward options using x
   x = list(
-    message = message
+    data = data
   )
 
   # create widget
