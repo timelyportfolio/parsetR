@@ -17,3 +17,18 @@ parset(mtcars[,c("gear","cyl")])
 
 data(genes,package="ggparallel")
 parset(genes[,c("path","chrom")])
+
+
+# demonstrate working with non-table
+data(Alligator, package="vcdExtra")
+# with data.frame to demo how it doesn't work
+parset(Alligator)
+# contrived example converting to data.frame first
+parset(
+  Alligator,
+  # dimensions are the categorical columns
+  dimensions = colnames(Alligator)[-5],
+  # use some JavaScript to inform parset that Freq has the value
+  value = htmlwidgets::JS("function(d){return d.count}")
+)
+
