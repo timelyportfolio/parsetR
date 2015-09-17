@@ -29,6 +29,8 @@ devtools::install_github("timelyportfolio/parsetR")
 
 ## Usage
 
+### With `table`
+
 In this first iteration, `parsetR` is designed to work with `tables` from R, such as the built-in `Titanic` dataset.
 
 ```{r}
@@ -43,6 +45,30 @@ Here is another example with the `UCBAdmissions` data, and we'll make the lines 
 library(parsetR)
 
 parset(UCBAdmissions, tension = 0.5, width = "80%", height = 400)
+```
+
+### With `data.frame`
+
+With a `data.frame` you'll need to tell `parsetR` where to find the numeric column for now.  Otherwise, it will appear as a dimension. as shown below.  
+
+```{r}
+# demonstrate working with non-table
+data(Alligator, package="vcdExtra")
+# with data.frame to demo how it doesn't work
+parset(Alligator, width = "80%", height = 400)
+```
+
+I thought it be fun to force a little `JavaScript` to specify our numeric `value`.  I will eventually provide a more `R`-like interface, but for now please learn this tiny bit of JS :). 
+
+```{r}
+parset(
+  Alligator,
+  # dimensions are the categorical columns
+  dimensions = colnames(Alligator)[-5],
+  # use some JavaScript to inform parset that Freq has the value
+  value = htmlwidgets::JS("function(d){return d.count}"),
+  width = "80%", height = 400
+)
 ```
 
 ## Feedback
